@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlimentoScript : MonoBehaviour
+public class PersonajeScript : MonoBehaviour
 {
-    public int valorAlimentario;
+    public int nivelHambre;
+
 
     // Start is called before the first frame update
     void Start()
