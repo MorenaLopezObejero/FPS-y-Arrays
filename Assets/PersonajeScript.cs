@@ -18,4 +18,24 @@ public class PersonajeScript : MonoBehaviour
     {
         
     }
+
+    void TomarAlimento(int valorAlimentario)
+    {
+        nivelHambre -= valorAlimentario;
+        if (nivelHambre <= 0)
+        {
+            nivelHambre = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        AlimentoScript alimento;
+        alimento = other.GetComponent<AlimentoScript>();
+        if (alimento)
+        {
+            TomarAlimento(alimento.valorAlimentario);
+            Destroy(other.gameObject);
+        }
+    }
 }
